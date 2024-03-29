@@ -5,5 +5,4 @@ import Counter from "./Task4/Counter";
 import TaskList from "./Task5/TaskList";
 import Button from "./Task6/Button";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export { Greeting, UserCard, Weather, Counter, TaskList, Button};
