@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {Counter,PersonForm,ToDoList} from './Day2'
+import {Counter,PersonForm,ToDoList,RandomNumberGenerator,CounterWithStep} from './Day2'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -10,6 +10,8 @@ root.render(
     <Counter />
     <PersonForm />
     <ToDoList />
+    <RandomNumberGenerator />
+    <CounterWithStep />
   </React.StrictMode>
 );
 
