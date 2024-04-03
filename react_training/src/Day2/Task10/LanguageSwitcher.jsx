@@ -7,7 +7,6 @@ import { UserLanguage } from "./LanguageContext";
 import SwitchButton from "./SwitchButton";
 
 const LanguageSwitcher = () => {
-    
   return (
     <>
       <UserLanguage>
