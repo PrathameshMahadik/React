@@ -8,11 +8,11 @@ export default function RandomNumberGenerator() {
   const [number, setNumber] = useState(0);
   function randmGenerator() {
     let num = Math.floor(Math.random() * 100);
-    console.log(num);
     setNumber(num);
   }
   return (
     <div>
+      <h1>Random Number Generator</h1>
       <div>{number}</div>
       <div>
         <button onClick={randmGenerator}>Click Here</button>

@@ -9,19 +9,20 @@ import React, { useState } from "react";
 export default function CounterWithStep() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
-  function handleStepChange(e) {
-    setStep(e.target.value);
-  }
+  // function handleStepChange(e) {
+  //   setStep(e.target.value);
+  // }
   return (
     <div>
+      <h1>Count With Step</h1>
       <p>{count}</p>
       <p>
-        <label>Enter Step:</label>
+        <label>Enter Step: </label>
         <input
           type="number"
-          id="age"
+          id="step"
           value={step}
-          onChange={handleStepChange}
+          onChange={(e)=>setStep(e.target.value)}
         />
       </p>
       <div>

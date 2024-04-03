@@ -9,28 +9,16 @@ export default function PersonForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState();
-
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleAgeChange = (e) => {
-    setAge(e.target.value);
-  };
-
   return (
     <div>
       <div>
+        <h1>Person Form</h1>
         <label>First Name:</label>
         <input
           type="text"
           id="firstName"
           value={firstName}
-          onChange={handleFirstNameChange}
+          onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
       <div>
@@ -39,12 +27,17 @@ export default function PersonForm() {
           type="text"
           id="lastName"
           value={lastName}
-          onChange={handleLastNameChange}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
       <div>
         <label>Age:</label>
-        <input type="number" id="age" value={age} onChange={handleAgeChange} />
+        <input
+          type="number"
+          id="age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
       </div>
       <div>
         <h2>Entered Information:</h2>
