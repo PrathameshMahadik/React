@@ -8,11 +8,11 @@ import Links6 from "./Task6/Links";
 const Day3 = () => {
   return (
     <div>
-      {/* <Login />
-      <Login2 /> */}
+      <Login />
+      <Login2 />
       <Links />
-      {/* <Links4 />
-      <Links6 /> */}
+      <Links4 />
+      <Links6 />
     </div>
   );
 };
