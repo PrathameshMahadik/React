@@ -5,9 +5,9 @@ function Button(props) {
   const { buttonData } = props;
   return (
     <div>
-      {buttonData.map((x) => {
+      {buttonData.map((x,index) => {
         return(
-        <button style={{ color: x.color }}>{x.text}</button>
+        <button style={{ color: x.color }} key={`color_${index}`}>{x.text}</button>
         )
       })}
     </div>
