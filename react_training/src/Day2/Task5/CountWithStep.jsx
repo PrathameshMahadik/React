@@ -6,7 +6,7 @@ Add an input field where the user can specify a step value.
 Update the count using the specified step value when the buttons are clicked. */
 import React, { useState } from "react";
 
-export default function CounterWithStep() {
+const CounterWithStep = () => {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
   // function handleStepChange(e) {
@@ -22,7 +22,7 @@ export default function CounterWithStep() {
           type="number"
           id="step"
           value={step}
-          onChange={(e)=>setStep(e.target.value)}
+          onChange={(e) => setStep(e.target.value)}
         />
       </p>
       <div>
@@ -35,4 +35,5 @@ export default function CounterWithStep() {
       </div>
     </div>
   );
-}
+};
+export default CounterWithStep;

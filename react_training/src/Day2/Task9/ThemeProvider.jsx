@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThemeContext } from "./ThemeSwitcher";
+import { ThemeContext } from "./ThemedButton";
 
 const ThemeProvider = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState("light");

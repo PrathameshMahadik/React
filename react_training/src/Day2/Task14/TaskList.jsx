@@ -3,10 +3,9 @@ Each task has a "Complete" button.
 Implement a feature where clicking the "Complete" button marks the task as completed.
 Use the useCallback hook to create dynamic callback functions for each task.
 Ensure that clicking the "Complete" button for one task doesn't trigger unnecessary re-renders for other tasks. */
-
 import React, { useCallback, useState } from "react";
-
-function TaskList({ tasks }) {
+import { tasks } from "./task";
+const TaskList = () => {
   const [newArr, setNewArr] = useState(tasks);
   const handleClick = useCallback((index) => {
     setNewArr(
@@ -17,23 +16,22 @@ function TaskList({ tasks }) {
         return item;
       })
     );
-  }, []);
+  },[newArr]);
 
   return (
     <>
-    <h1>Task List</h1>
-    <ul>
-      {newArr?.map((task, index) => (
-        <li key={task.name}>
-          {task.name}
-          <button onClick={() => handleClick(index)}>
-            {task.isCompleted ? "Completed" : "Incomplete"}
-          </button>
-        </li>
-      ))}
-    </ul>
+      <h1>Task List</h1>
+      <ul>
+        {newArr?.map((task, index) => (
+          <li key={`name_${index}`}>
+            {task.name}
+            <button onClick={() => handleClick(index)}>
+              {task.isCompleted ? "Completed" : "Incomplete"}
+            </button>
+          </li>
+        ))}
+      </ul>
     </>
   );
-}
-
+};
 export default TaskList;

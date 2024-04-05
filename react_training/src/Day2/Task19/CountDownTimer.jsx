@@ -1,11 +1,12 @@
 import React from "react";
 import useTimer from "./useTimer";
 
-function CountDownTimer() {
-  const { time, setTime, Start, Pause, isActive, Reset } = useTimer(10);
+const CountDownTimer = () => {
+  const { time, Start, Pause, isActive, Reset } = useTimer(10);
 
   return (
     <>
+      <h1>CountDownTimer Custom Hook</h1>
       <p>Timer: {time} seconds</p>
       <button onClick={Start} disabled={isActive}>
         Start
@@ -16,5 +17,5 @@ function CountDownTimer() {
       <button onClick={Reset}>Reset</button>
     </>
   );
-}
+};
 export default CountDownTimer;

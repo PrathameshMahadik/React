@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import useClipboard from "./useClipboard";
 
-function CopyButton() {
+const CopyButton = () => {
   const { copiedText, copyToClipboard } = useClipboard();
   const [text, setText] = useState("");
-
   return (
     <div>
     <h1>useClipboard - Custom Hook</h1>

@@ -4,7 +4,7 @@ Render the current value of randomNumber.
 Add a button that generates a new random number and updates the state when clicked. */
 import { useState } from "react";
 
-export default function RandomNumberGenerator() {
+const RandomNumberGenerator = () => {
   const [number, setNumber] = useState(0);
   function randmGenerator() {
     let num = Math.floor(Math.random() * 100);
@@ -19,4 +19,5 @@ export default function RandomNumberGenerator() {
       </div>
     </div>
   );
-}
+};
+export default RandomNumberGenerator;

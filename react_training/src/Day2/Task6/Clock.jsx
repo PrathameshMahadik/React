@@ -4,7 +4,7 @@ Use the useEffect hook to update the time state every second to display the curr
 Render the current time in a <p> element.
 When the component unmounts, clear the interval to stop updating the time. */
 import { useState, useEffect } from "react";
-function Clock() {
+const Clock = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   useEffect(() => {
     setInterval(() => {

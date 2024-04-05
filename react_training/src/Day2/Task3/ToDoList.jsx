@@ -15,7 +15,6 @@ const ToDoList = () => {
     };
     setTodos([...todos, newTodo]);
   };
-
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -23,11 +22,9 @@ const ToDoList = () => {
       )
     );
   };
-
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-
   return (
     <div>
       <h1>To-Do List</h1>

@@ -4,7 +4,7 @@ Implement methods for setting, getting, and removing data using the hook.
 Utilize the localStorage API within the hook to manage data.*/
 import { useState } from "react";
 
-export default function useLocalStorage(initialsate, key) {
+const useLocalStorage = (initialsate, key) => {
   const [state, setState] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem(key)) || initialsate;
@@ -33,3 +33,4 @@ export default function useLocalStorage(initialsate, key) {
   };
   return [state, setItem, removeItem, getItem];
 }
+export default useLocalStorage;

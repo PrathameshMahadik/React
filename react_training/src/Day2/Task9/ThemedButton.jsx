@@ -1,9 +1,10 @@
-import { useContext } from "react";
-import { ThemeContext, themes } from "./ThemeSwitcher";
+import { createContext, useContext } from "react";
+import { themes } from "./themes";
+
+const ThemeContext = createContext();
 
 const ThemedButton = () => {
   const { currentTheme, toggleTheme } = useContext(ThemeContext);
-
   return (
     <button
       onClick={toggleTheme}
@@ -17,3 +18,4 @@ const ThemedButton = () => {
   );
 };
 export default ThemedButton;
+export {ThemeContext}

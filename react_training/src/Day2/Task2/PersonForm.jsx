@@ -5,7 +5,7 @@ As the user types, update the respective state variables.
 Display the entered information below the input fields.*/
 import React, { useState } from "react";
 
-export default function PersonForm() {
+const PersonForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState();
@@ -47,4 +47,5 @@ export default function PersonForm() {
       </div>
     </div>
   );
-}
+};
+export default PersonForm;

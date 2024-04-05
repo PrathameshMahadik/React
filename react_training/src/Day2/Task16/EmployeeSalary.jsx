@@ -5,21 +5,8 @@ Ensure that the useMemo hook has a dependency on the employee data so that it re
 Render the average salary on the screen.
 Include a button that, when clicked, updates the employee data with new salaries. */
 import React, { useMemo } from "react";
+import emp from "./emp";
 
-const emp = [
-  {
-    name: "Tuhin",
-    salary: 32000,
-  },
-  {
-    name: "Tejas",
-    salary: 39000,
-  },
-  {
-    name: "Prathamesh",
-    salary: 25000,
-  },
-];
 const EmployeeSalary = () => {
   const avgSalary = useMemo(() => {
     let length = emp.length;
@@ -29,7 +16,6 @@ const EmployeeSalary = () => {
     }, 0);
     return (sum / length).toFixed(2);
   }, []);
-
   return (
     <div>
       <h1>Employee Salary </h1>

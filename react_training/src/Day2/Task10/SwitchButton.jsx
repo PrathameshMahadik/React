@@ -1,12 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import LanguageContext from "./LanguageContext";
-import Data1 from "./eng.json";
-import Data2 from "./span.json";
+import { english, spanish } from "./eng";
 
 const SwitchButton = () => {
   const { language, setLanguage } = useContext(LanguageContext);
-  const data = (language === "english")? Data1:Data2;
+  const data = Object.values((language === "english")? english:spanish);
   return (
     <>
       <button
@@ -18,14 +17,8 @@ const SwitchButton = () => {
       >
         {language}
       </button>
-      {data.map((value)=>{
-        return (
-            <>
-            <h1>{value.welcome_messege}</h1>
-            <h2>{value.lang}</h2>
-            </>
-        )
-      })}
+      <h1>{data[0]}</h1>
+      <h2>{data[1]}</h2>
     </>
   );
 };

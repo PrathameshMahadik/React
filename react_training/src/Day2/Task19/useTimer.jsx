@@ -5,7 +5,7 @@ Return the current timer value and methods to start, pause, and reset the timer.
 Develop a component that utilizes the useTimer hook to display and control a countdown. */
 import { useState, useEffect } from "react";
 
-function useTimer(initialTime) {
+const useTimer = (initialTime) => {
   const [time, setTime] = useState(initialTime);
   const [isActive, setIsActive] = useState(false);
 
@@ -31,5 +31,5 @@ function useTimer(initialTime) {
   };
 
   return { time, setTime, Start, Pause, isActive, Reset };
-}
+};
 export default useTimer;
