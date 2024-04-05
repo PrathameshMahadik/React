@@ -1,8 +1,8 @@
-// 3.creat pages: Home and About.
-// Implement routing using React Router DOM.
-// Create navigation links to Routes between the Home and About pages.
-// Display appropriate content on each page.
-// Add a "404 Not Found" page for any invalid routes.
+/* 3.creat pages: Home and About.
+Implement routing using React Router DOM.
+Create navigation links to Routes between the Home and About pages.
+Display appropriate content on each page.
+Add a "404 Not Found" page for any invalid routes. */
 import React from "react";
 import About from "./About";
 import Home from "./Home";
