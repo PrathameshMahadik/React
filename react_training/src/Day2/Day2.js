@@ -19,7 +19,7 @@ import Notification from "./Task7/Notification";
 import SlideShow from "./Task8/SlideShow";
 import ThemeSwitcher from "./Task9/ThemeSwitcher";
 
-function Day2() {
+const Day2 = () => {
   return (
     <div className="App">
       <Counter />
@@ -35,7 +35,7 @@ function Day2() {
       <Shopping />
       <VotingApp />
       <Parent />
-      <TaskList tasks = {tasks}/>
+      <TaskList tasks={tasks} />
       <StudentList />
       <EmployeeSalary />
       <CopyButton />
@@ -43,5 +43,5 @@ function Day2() {
       <CountDownTimer />
     </div>
   );
-}
+};
 export default Day2;
