@@ -5,9 +5,9 @@ const UserCard = (props) => {
   const { userData } = props;
   return (
     <div>
-      {userData.map((x) => {
+      {userData.map((x,index) => {
         return (
-          <section>
+          <section key= {`name_${index}`}>
             <img src={x.avatarURL} alt=""/>
             <br />{x.name}
             <br />{x.email}
