@@ -5,7 +5,7 @@ import "./index.css";
 const UserCard = (props) => {
   const { userData } = props;
   return (
-    <div>
+    <div className="main">
       {userData.map((x, index) => {
         return (
           <section key={`name_${index}`} className="card">
