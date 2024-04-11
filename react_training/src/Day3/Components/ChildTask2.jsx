@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { loginContext, ThemeContext } from "./ParentTask2";
-import "./theme.css";
+import "../CSS files/theme.css";
 
 const Child = () => {
   const { login, setLogin } = useContext(loginContext);

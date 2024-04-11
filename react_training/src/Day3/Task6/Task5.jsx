@@ -5,7 +5,7 @@ Fetch item details based on the route parameter and display them on the detail p
 Add a "Go Back" button on the detail page to return to the list. */
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { products } from "../Components/products";
+import { products } from "../Mockdata/products";
 import { ProductsTask6, ProductsDetails6 } from "../Components";
 
 const Links = () => {
