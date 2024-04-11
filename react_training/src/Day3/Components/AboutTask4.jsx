@@ -1,6 +1,6 @@
 import React from "react";
-import Menu from "./Menu";
-const About = () => {
+import Menu from "./MenuTask4";
+const AboutTask4 = () => {
   return (
     <div>
       <Menu />
@@ -8,4 +8,4 @@ const About = () => {
     </div>
   );
 };
-export default About;
+export default AboutTask4;

@@ -5,19 +5,19 @@ Create a child component that consumes both contexts.
 Allow the user to change their theme preference (light/dark) using a button in the child component.
 Display the theme preference in the UI and adjust the component's styling accordingly. */
 import React from "react";
-import ParentProvider, { ThemeProvider } from "./Parent";
-import Child from "./Child";
+import { Child2 , ParentProvider2} from "../Components";
+import { ThemeProvider } from "../Components/ParentTask2";
 
-const Login2 = () => {
+const Task2 = () => {
   return (
     <div>
       <ThemeProvider>
-        <ParentProvider>
-          <Child />
-        </ParentProvider>
+        <ParentProvider2>
+          <Child2 />
+        </ParentProvider2>
       </ThemeProvider>
     </div>
   );
 };
 
-export default Login2;
+export default Task2;

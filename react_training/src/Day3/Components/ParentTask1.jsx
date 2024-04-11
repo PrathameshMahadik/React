@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext } from "react";
 
 const LoginContext = createContext();
-export const Parent = ({ children }) => {
+const Parent = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const userName = "Prathamesh";
   return (
@@ -21,3 +21,4 @@ export const Parent = ({ children }) => {
   );
 };
 export const useAuth = () => useContext(LoginContext);
+export default Parent;

@@ -1,6 +1,6 @@
 import React from "react";
 import Que3 from "./Que3";
-const About = () => {
+const AboutTask3 = () => {
   return (
     <div>
       <Que3 />
@@ -8,4 +8,4 @@ const About = () => {
     </div>
   );
 };
-export default About;
+export default AboutTask3;
