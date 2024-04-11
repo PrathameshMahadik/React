@@ -11,8 +11,8 @@ import About from "./About";
 import Login from "./Login";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "./Dashboard";
-import Settings from "./Setting";
-import Profile from "./Profile";
+import Settings from "../Components/Setting";
+import Profile from "../Components/Setting";
 const Links4 = () => {
   return (
     <div>

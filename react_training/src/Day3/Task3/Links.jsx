@@ -6,7 +6,7 @@ Add a "404 Not Found" page for any invalid routes. */
 import React from "react";
 import About from "./About";
 import Home from "./Home";
-import Error from "./Error";
+import Error from '../Components/Error';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Links = () => {
