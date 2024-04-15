@@ -8,15 +8,14 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { renderRoutes, routes } from "../Router/Task4";
 import { PrivateRoutes } from "../Components";
+
 const Links4 = () => {
   return (
     <div>
       <Router>
         <Routes>
-          <Route element = {<PrivateRoutes />}>
-          {renderRoutes(routes)}
-          </Route>
-          </Routes>
+          <Route element={<PrivateRoutes />}>{renderRoutes(routes)}</Route>
+        </Routes>
       </Router>
     </div>
   );

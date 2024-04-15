@@ -37,11 +37,10 @@ const routes = [
   },
 ];
 
-const renderRoutes = (routes) => 
-  routes.map(({ path, element, children ,index}) => (
+const renderRoutes = (routes) =>
+  routes.map(({ path, element, children, index }) => (
     <Route key={`name_${index}`} path={path} element={element}>
       {children && renderRoutes(children)}
     </Route>
-    
   ));
-export {renderRoutes,routes};
+export { renderRoutes, routes };
