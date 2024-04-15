@@ -4,21 +4,15 @@ Create a route parameter that represents the item's ID in the URL (e.g., "/produ
 Fetch item details based on the route parameter and display them on the detail page.
 Add a "Go Back" button on the detail page to return to the list. */
 import React from "react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { products } from "../Mockdata/products";
-import { ProductsTask6, ProductsDetails6 } from "../Components";
-
+import {  BrowserRouter, Routes } from "react-router-dom";
+import { routes,renderRoutes } from "../Router/Task5";
 const Links = () => {
   return (
     <>
       <div>Ques6</div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ProductsTask6 products={products} />}></Route>
-          <Route
-            path="/products/:id"
-            element={<ProductsDetails6 products={products} />}
-          ></Route>
+          {renderRoutes(routes)}
         </Routes>
       </BrowserRouter>
     </>

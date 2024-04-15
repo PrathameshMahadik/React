@@ -20,16 +20,19 @@ const Login = () => {
   };
   return (
     <div>
-      {input.map((item) => {
+      {input.map((item,index) => {
         const { type, placeholder, fieldName } = item;
         return (
-          <input
+          <section key = {`name_${index}`}>
+            <input
             required
             type={type}
             value={formData.value}
             placeholder={placeholder}
             onChange={(e) => handleChange(fieldName, e.target.value)}
           />
+          </section>
+          
         );
       })}
       <button onClick={handleLogin}>Login</button>
