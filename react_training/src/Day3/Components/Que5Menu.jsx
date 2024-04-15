@@ -5,11 +5,23 @@ Add navigation links to switch between the sub-pages within the Dashboard sectio
 Customize the content displayed on each sub-page. */
 import React from "react";
 import { Link } from "react-router-dom";
+import { link } from "../Components/link";
 const Que5Mneu = () => {
   return (
     <div>
-      <Link to="settings">Settings</Link>
-      <Link to="profile"> Profile </Link>
+      <ul>
+        {Object.keys(link)
+          .slice(3, 5)
+          .map((key, index) => {
+            return (
+              <section key = {`name_${index}`}>
+                <li>
+                  <Link to={key}>{link[key]}</Link>
+                </li>
+              </section>
+            );
+          })}
+      </ul>
     </div>
   );
 };

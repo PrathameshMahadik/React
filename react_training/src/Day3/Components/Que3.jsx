@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { link } from "./link";
 const Que3 = () => {
   return (
     <div>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
+          {Object.keys(link)
+            .slice(0, 2)
+            .map((key, index) => {
+              return (
+                <section key = {`name_${index}`}>
+                  <li>
+                    <Link to={key}>{link[key]}</Link>
+                  </li>
+                </section>
+              );
+            })}
         </ul>
       </nav>
     </div>
