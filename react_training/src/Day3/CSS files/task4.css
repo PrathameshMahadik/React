@@ -1,0 +1,11 @@
+.mainDiv{
+    gap: 5px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+button{
+    width:100px
+}

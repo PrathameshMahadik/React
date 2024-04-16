@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {input } from './input'
+import '../CSS files/task4.css'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ const Login = () => {
     }));
   };
   return (
-    <div>
+    <div className="outer">
+    <div className="mainDiv">
       {input.map((item,index) => {
         const { type, placeholder, fieldName } = item;
         return (
@@ -32,10 +34,10 @@ const Login = () => {
             onChange={(e) => handleChange(fieldName, e.target.value)}
           />
           </section>
-          
         );
       })}
       <button onClick={handleLogin}>Login</button>
+      </div>
     </div>
   );
 };
