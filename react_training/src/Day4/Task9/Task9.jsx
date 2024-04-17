@@ -1,45 +1,17 @@
-/* 9.Implement a responsive sidebar navigation using Material-UI's Drawer component. 
-Include links that allow users to navigate between different sections of your web app. */
-
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import { Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Layout, Info, Profile } from "../Components/Task9/Task9";
 
 const Task9 = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen) => () => {
-    setOpen(newOpen);
-  };
-  const linkarray = ["about", "chart", "setting"];
-  const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-      <List>
-        {["Inbox", "Starred", "Send email"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <Link to={`/${linkarray[index]}`}>{linkarray[index]}</Link>
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-    </Box>
-  );
-
   return (
-    <div>
-      <Button onClick={toggleDrawer(true)}>Open drawer</Button>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
-        {DrawerList}
-      </Drawer>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/Info" element={<Info />} />
+          <Route path="/Profile" element={<Profile />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 export default Task9;

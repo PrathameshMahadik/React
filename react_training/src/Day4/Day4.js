@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Main,
   Task1,
   Task10,
   Task11,
@@ -13,7 +14,7 @@ import {
   Task6,
   Task7,
   Task8,
-  Task9,
+  // Task9,
 } from "./index";
 
 const Day4 = () => {
@@ -35,7 +36,7 @@ const Day4 = () => {
       <hr />
       <Task8 />
       <hr />
-      <Task9 />
+      <Main />
       <hr />
       <Task10 />
       <hr />

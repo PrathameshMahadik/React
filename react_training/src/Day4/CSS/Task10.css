@@ -1,13 +1,7 @@
-.mainDiv{
-    gap: 7px;
+.signInBox{
     justify-content: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
-button{
-    width: 100px;
-}
-/* input{
-    margin-left: 100px;
-} */

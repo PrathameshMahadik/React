@@ -2,6 +2,8 @@
 Implement controlled components for both inputs. 
 When the user enters a value in one input, the other input should update with the converted temperature. */
 import React, { useState } from "react";
+import '../CSS/Task4.css'
+
 const Task8 = () => {
   const [celsius, setCelsius] = useState("");
   const [fahrenheit, setFahrenheit] = useState("");
@@ -22,6 +24,7 @@ const Task8 = () => {
     <div>
         <h1>Task-8</h1>
       <h2>Temperature Converter</h2>
+      <div className="mainDiv">
       <div>
         <label>Celsius:</label>
         <input
@@ -39,6 +42,7 @@ const Task8 = () => {
           onChange={handleFahrenheitChange}
           placeholder="Enter temperature in Fahrenheit"
         />
+      </div>
       </div>
     </div>
   );

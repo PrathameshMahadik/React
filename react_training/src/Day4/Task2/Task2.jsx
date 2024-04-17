@@ -3,7 +3,7 @@ Ensure that each input is a controlled component.
 When the user submits the form, log the form data to the console. */
 import React, { useState } from "react";
 import { Checkbox, Name, Text, Email, Number, Age, Gender, Radio, Male, Female, Agree, Submit, cap_Submit } from "../constants";
-
+import '../CSS/Task4.css'
 const Task2 = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,10 +27,10 @@ const Task2 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mainDiv">
       <h1>Task-2</h1>
       <div>
-        <label>Name:</label>
+        <label>Name :</label>
         <input
           type={Text}
           name={Name}
@@ -39,7 +39,7 @@ const Task2 = () => {
         />
       </div>
       <div>
-        <label>Email:</label>
+        <label>Email :</label>
         <input
           type={Email}
           name={Email}
@@ -48,7 +48,7 @@ const Task2 = () => {
         />
       </div>
       <div>
-        <label>Age:</label>
+        <label>Age : </label>
         <input
           type={Number}
           name={Age}

@@ -8,6 +8,7 @@ import {
   Modal,
   TextField,
 } from "../Components/material";
+import '../CSS/Task10.css'
 
 const style = {
   position: "absolute",
@@ -40,7 +41,7 @@ const Task11 = () => {
   return (
     <div>
       <div>Ques11</div>
-
+      <div className="signInBox">
       <TextField
         required
         label="Name"
@@ -69,6 +70,7 @@ const Task11 = () => {
           </Typography>
         </Box>
       </Modal>
+      </div>
     </div>
   );
 };

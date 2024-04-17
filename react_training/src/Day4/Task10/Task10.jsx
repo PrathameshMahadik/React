@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Box, Button } from "@mui/material";
+import '../CSS/Task10.css'
+
 const Task10 = () => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
@@ -30,7 +32,7 @@ const Task10 = () => {
     }
   };
   return (
-    <Box component="form" onSubmit={handleSubmit} noValidate>
+    <Box component="form" onSubmit={handleSubmit} noValidate className="signInBox">
       <TextField
         required
         label="Name"

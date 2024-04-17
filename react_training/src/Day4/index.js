@@ -8,10 +8,11 @@ import Task5 from "./Task5/Task5";
 import Task6 from "./Task6/Task6";
 import Task7 from "./Task7/Task7";
 import Task8 from "./Task8/Task8";
-import Task9 from "./Task9/Task9";
+// import Task9 from "./Task9/Task9";
 import Task10 from "./Task10/Task10";
 import Task11 from "./Task11/Task11";
 import Task12 from "./Task12/Task12";
+import Main from "./Task9/Task9";
 
 export {
   Task1,
@@ -27,5 +28,6 @@ export {
   Task6,
   Task7,
   Task8,
-  Task9,
+  Main
+  // Task9,
 };

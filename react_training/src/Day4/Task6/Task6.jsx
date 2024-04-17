@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../CSS/Task4.css";
 
 const Task6 = () => {
   const [taskInput, setTaskInput] = useState("");
@@ -18,20 +19,22 @@ const Task6 = () => {
     <div>
       <h1>Task-6</h1>
       <h2>Todo List</h2>
-      <div>
-        <input
-          type="text"
-          value={taskInput}
-          onChange={handleInputChange}
-          placeholder="Add new task"
-        />
+      <div className="mainDiv">
+        <div>
+          <input
+            type="text"
+            value={taskInput}
+            onChange={handleInputChange}
+            placeholder="Add new task"
+          />
+        </div>
         <button onClick={handleAddTask}>Add Task</button>
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
-        ))}
-      </ul>
     </div>
   );
 };
