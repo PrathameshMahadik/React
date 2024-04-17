@@ -1,10 +1,10 @@
 // 13.install  Yup. Define a Yup validation schema for a more complex form. Include validation rules for fields like email, password, and phone number. Ensure that error messages are displayed for each validation rule.
 // Implement real-time validation feedback using Material-UI's TextField component. Show validation errors as the user types, and clear the errors when the input is valid.(Use Formik as well)
-
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "@mui/material/TextField";
+import * as constants from '../constants'
 
 const signInSchema = Yup.object().shape({
   email: Yup.string().email().required("Email is required"),
@@ -35,9 +35,9 @@ const Task13 = () => {
             <Form>
               <div className="form-row">
                 <TextField
-                  id="email"
-                  name="email"
-                  label="Email"
+                  id={constants.Email}
+                  name={constants.Email}
+                  label={constants.cap_Email}
                   variant="outlined"
                   onChange={handleChange}
                   error={errors.email && touched.email}
@@ -47,10 +47,10 @@ const Task13 = () => {
               <br />
               <div className="form-row">
                 <TextField
-                  id="password"
-                  name="password"
-                  label="Password"
-                  type="password"
+                  name={constants.Password}
+                  id={constants.Password}
+                  label={constants.cap_password}
+                  type={constants.Password}
                   variant="outlined"
                   onChange={handleChange}
                   error={errors.password && touched.password}

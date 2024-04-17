@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Box, Button } from "@mui/material";
-const FormValidation = () => {
+const Task10 = () => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
   const [email, setEmail] = useState("");
@@ -61,10 +61,15 @@ const FormValidation = () => {
       />
       <br />
       <br />
-      <Button variant="contained" color="primary" type="submit">
+      <Button
+        variant="contained"
+        color="primary"
+        type="submit"
+        disabled={nameError || emailError}
+      >
         Submit
       </Button>
     </Box>
   );
-}
-export default FormValidation;
+};
+export default Task10;

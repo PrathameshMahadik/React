@@ -2,6 +2,7 @@
 Ensure that each input is a controlled component. 
 When the user submits the form, log the form data to the console. */
 import React, { useState } from "react";
+import { Checkbox, Name, Text, Email, Number, Age, Gender, Radio, Male, Female, Agree, Submit, cap_Submit } from "../constants";
 
 const Task2 = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Task2 = () => {
     const { name, value, type, checked } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === `${Checkbox}` ? checked : value,
     }));
   };
 
@@ -31,8 +32,8 @@ const Task2 = () => {
       <div>
         <label>Name:</label>
         <input
-          type="text"
-          name="name"
+          type={Text}
+          name={Name}
           value={formData.name}
           onChange={handleChange}
         />
@@ -40,8 +41,8 @@ const Task2 = () => {
       <div>
         <label>Email:</label>
         <input
-          type="email"
-          name="email"
+          type={Email}
+          name={Email}
           value={formData.email}
           onChange={handleChange}
         />
@@ -49,8 +50,8 @@ const Task2 = () => {
       <div>
         <label>Age:</label>
         <input
-          type="number"
-          name="age"
+          type={Number}
+          name={Age}
           value={formData.age}
           onChange={handleChange}
         />
@@ -58,18 +59,18 @@ const Task2 = () => {
       <div>
         <label>Gender:</label>
         <input
-          type="radio"
-          name="gender"
-          value="male"
-          checked={formData.gender === "male"}
+          type={Radio}
+          name={Gender}
+          value={Male}
+          checked={formData.gender === `${Male}`}
           onChange={handleChange}
         />
         <label>Male</label>
         <input
-          type="radio"
-          name="gender"
-          value="female"
-          checked={formData.gender === "female"}
+          type={Radio}
+          name={Gender}
+          value={Female}
+          checked={formData.gender === `${Female}`}
           onChange={handleChange}
         />
         <label>Female</label>
@@ -77,15 +78,15 @@ const Task2 = () => {
       <div>
         <label>Agree to terms:</label>
         <input
-          type="checkbox"
-          name="agree"
+          type={Checkbox}
+          name={Agree}
           checked={formData.agree}
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type={Submit}>{cap_Submit}</button>
     </form>
   );
-}
+};
 
 export default Task2;

@@ -1,11 +1,13 @@
 // 11.Design a modal dialog component using Material-UI's Dialog component.
 // Use it to display additional information or capture user input within your app.
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import TextField from "@mui/material/TextField";
+import {
+  Box,
+  Button,
+  Typography,
+  Modal,
+  TextField,
+} from "../Components/material";
 
 const style = {
   position: "absolute",
@@ -54,7 +56,7 @@ const Task11 = () => {
       />
       <br />
       <br />
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen} disabled={name.length === 0}>Open modal</Button>
       <Modal
         open={open}
         onClose={handleClose}

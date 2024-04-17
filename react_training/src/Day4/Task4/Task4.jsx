@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import '../CSS/Task4.css'
 
 const Task4 = () => {
   const [password, setPassword] = useState("");
   const [checkPassword, setCheckPassword] = useState("");
   return (
-    <div>
+    <div className="mainDiv">
       <h1>Task-4</h1>
       <label htmlFor="password">
         Enter Password :{" "}
