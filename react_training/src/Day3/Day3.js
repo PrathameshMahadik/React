@@ -5,9 +5,13 @@ const Day3 = () => {
   return (
     <div>
       <Task1 />
+      <hr />
       <Task2 />
+      <hr />
       <Task3 />
+      <hr />
       <Task4 />
+      <hr />
       <Task5 />
     </div>
   );
