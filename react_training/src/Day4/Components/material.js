@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { alpha } from "@mui/material/styles";
+import {Box, ThemeProvider} from '@mui/material'
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -26,6 +27,7 @@ import DeleteIcon from "@mui/material/Icon/Icon";
 
 export {
   PropTypes,
+  ThemeProvider,
   alpha,
   Box,
   Table,

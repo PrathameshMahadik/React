@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Box, Button } from "@mui/material";
-import '../CSS/Task10.css'
+import "../CSS/Task10.css";
 
 const Task10 = () => {
   const [name, setName] = useState("");
@@ -32,7 +32,22 @@ const Task10 = () => {
     }
   };
   return (
-    <Box component="form" onSubmit={handleSubmit} noValidate className="signInBox">
+    <div className="signInBox">
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      noValidate
+      height={300}
+      width={300}
+      my={4}
+      display="flex"
+      justifyContent={"center"}
+      alignItems="center"
+      gap={6}
+      p={2}
+      sx={{ border: "2px solid grey" }}
+    >
+      <div>
       <TextField
         required
         label="Name"
@@ -71,7 +86,9 @@ const Task10 = () => {
       >
         Submit
       </Button>
+      </div>
     </Box>
+    </div>
   );
 };
 export default Task10;

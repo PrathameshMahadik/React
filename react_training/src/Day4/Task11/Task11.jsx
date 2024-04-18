@@ -39,9 +39,21 @@ const Task11 = () => {
     }
   };
   return (
-    <div>
-      <div>Ques11</div>
-      <div className="signInBox">
+    <div className="signInBox">
+      <Box
+        height={300}
+        width={300}
+        my={4}
+        display="flex"
+        justifyContent={"center"}
+        alignItems="center"
+        gap={6}
+        p={2}
+        sx={{ border: "2px solid grey" }}
+      >
+      <div>
+      <h2>Ques11</h2>
+      <br /><br />
         <TextField
           required
           label="Name"
@@ -73,6 +85,7 @@ const Task11 = () => {
           </Box>
         </Modal>
       </div>
+      </Box>
     </div>
   );
 };
