@@ -8,7 +8,7 @@ import {
   Modal,
   TextField,
 } from "../Components/material";
-import '../CSS/Task10.css'
+import "../CSS/Task10.css";
 
 const style = {
   position: "absolute",
@@ -42,34 +42,36 @@ const Task11 = () => {
     <div>
       <div>Ques11</div>
       <div className="signInBox">
-      <TextField
-        required
-        label="Name"
-        value={name}
-        onChange={handleNameChange}
-        error={nameError}
-        inputProps={{
-          pattern: "[A-Za-z ]+",
-        }}
-        helperText={
-          nameError ? "Please enter your name (letters and spaces only)" : ""
-        }
-      />
-      <br />
-      <br />
-      <Button onClick={handleOpen} disabled={name.length === 0}>Open modal</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {name}
-          </Typography>
-        </Box>
-      </Modal>
+        <TextField
+          required
+          label="Name"
+          value={name}
+          onChange={handleNameChange}
+          error={nameError}
+          inputProps={{
+            pattern: "[A-Za-z ]+",
+          }}
+          helperText={
+            nameError ? "Please enter your name (letters and spaces only)" : ""
+          }
+        />
+        <br />
+        <br />
+        <Button onClick={handleOpen} variant="contained" disabled={name.length === 0} className="button1">
+          Open modal
+        </Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              {name}
+            </Typography>
+          </Box>
+        </Modal>
       </div>
     </div>
   );
