@@ -2,7 +2,7 @@
 and displays it on the page. Use the fetch function to make the request. */
 import React, { useEffect, useState } from "react";
 import "../CSS_Files/index.css";
-import CircularProgress from "@mui/material/CircularProgress";
+import CircularProgress from "@mui/material/CircularProgress/CircularProgress";
 
 const Task1 = () => {
   const [data, setData] = useState([]);
