@@ -10,7 +10,7 @@ const Task3 = () => {
       <h2>Counter: {count}</h2>
       <div className="counter">
         <button onClick={() => setCount(count + 1)}>Increment</button>
-        <button onClick={() => setCount(count + 1)}>Decrement</button>
+        <button onClick={() => setCount(count - 1)}>Decrement</button>
       </div>
     </>
   );

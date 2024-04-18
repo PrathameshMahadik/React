@@ -9,19 +9,19 @@ function Assignment6() {
         <h2>Task1 1</h2>
         <Task1 />
       </div>
-
+      <hr />
       <div className="Task-3">
         <h2>Task 3</h2>
         <Task3 />
       </div>
-
+      <hr />
       <div className="quTask">
         <h2>Task 4</h2>
         <Task2 fallback={"Error Loading Page"}>
           <Task4 />
         </Task2>
       </div>
-
+      <hr />
       <div className="Task-5">
         <h2>Task 5</h2>
         <Task5
@@ -30,7 +30,7 @@ function Assignment6() {
           phone="123-456-7890"
         />
       </div>
-
+      <hr />
       <div className="Task-6">
         <h2>Task 6</h2>
         <Task6 />
