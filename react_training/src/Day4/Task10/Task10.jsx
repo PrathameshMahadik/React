@@ -82,7 +82,7 @@ const Task10 = () => {
         variant="contained"
         color="primary"
         type="submit"
-        disabled={nameError || emailError}
+        disabled={!(nameError || emailError)}
       >
         Submit
       </Button>
