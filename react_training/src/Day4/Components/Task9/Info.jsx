@@ -1,10 +1,11 @@
 import React from "react";
 
-const Info = () => {
+const Info = (props) => {
+  const {title, content} = props;
   return (
     <div>
-      <h1>Info</h1>
-      <p>This is the Info page</p>
+      <h1>{title}</h1>
+      <p>{content}</p>
     </div>
   );
 };

@@ -9,8 +9,11 @@ const Task10 = () => {
   const [emailError, setEmailError] = useState(false);
   const handleNameChange = (e) => {
     setName(e.target.value);
+    console.log(e.target)
     if (e.target.validity.valid) {
       setNameError(false);
+      setName(e.target.value);
+      console.log(e.target.value);
     } else {
       setNameError(true);
     }

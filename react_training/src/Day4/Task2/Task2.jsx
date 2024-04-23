@@ -89,7 +89,6 @@ const Task2 = () => {
     <form onSubmit={handleSubmit} className="mainDiv">
       <h1>Task-2</h1>
       <div className="mainDiv">
-        <div>
           {formFields.map((field, index) => (
             <div key={index}>
               <label>{field.label}</label>
@@ -116,7 +115,6 @@ const Task2 = () => {
               )}
             </div>
           ))}
-        </div>
       </div>
       <button type={Submit}>{cap_Submit}</button>
     </form>
