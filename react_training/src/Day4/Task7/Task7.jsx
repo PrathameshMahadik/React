@@ -5,14 +5,22 @@ import React, { useState } from "react";
 
 const Task7 = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const items = ["Apple", "Banana", "Orange", "Mango", "Pineapple", "Grapes"];
+  const items = [
+    "Custard Apple",
+    "Apple",
+    "Banana",
+    "Orange",
+    "Mango",
+    "Pineapple",
+    "Grapes",
+  ];
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
   const filteredItems = items.filter((item) =>
-    item.toLowerCase().includes(searchQuery.toLowerCase())
+    item.toLowerCase().includes(searchQuery.trim().toLowerCase())
   );
 
   return (

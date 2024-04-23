@@ -1,26 +1,22 @@
-/* 14.Create a new form and Implement form submission handling. 
-Ensure that the form cannot be submitted if there are validation errors. 
-Display a summary of errors if the user attempts to submit an invalid form. */
 import React, { useState } from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import { Button, Box, TextField } from "../Components/material";
-import "../CSS/Task10.css";
+import { Formik, Form, Field } from "formik";
+import { TextField, Button, Snackbar, Alert, Box } from "@mui/material";
+import validationSchema from "../Components/Task13/ValidationSchema";
 
-const signInSchema = Yup.object().shape({
-  email: Yup.string().email().required("Email is required"),
-  password: Yup.string()
-    .required("Password is required")
-    .min(4, "Password is too short - should be 4 chars min"),
-});
-
-const initialValues = {
-  email: "",
-  password: "",
-};
-
+const input = [
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+  },
+];
 const Task14 = () => {
-  const [data, setData] = useState({});
+  const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
   return (
     <div className="signInBox">
       <Box
@@ -35,65 +31,70 @@ const Task14 = () => {
         sx={{ border: "2px solid grey" }}
       >
         <Formik
-          initialValues={initialValues}
-          validationSchema={signInSchema}
-          onSubmit={(values) => {
-            setData(values);
-            console.log(values);
+          initialValues={{
+            email: "",
+            password: "",
+            phoneNumber: "",
+          }}
+          validationSchema={validationSchema}
+          validateOnBlur={true}
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              console.log("Form values: ", values);
+              setSubmitting(false);
+            }, 400);
           }}
         >
-          {(formik) => {
-            const { errors, touched, isValid, dirty, handleChange } = formik;
-            return (
-              <div className="container">
-                <h1>Sign in to continue</h1>
-                <Form>
-                  <div className="form-row">
-                    <TextField
-                      id="email"
-                      name="email"
-                      label="Email"
-                      variant="outlined"
-                      onChange={handleChange}
-                      error={errors.email && touched.email}
-                      helperText={
-                        errors.email && touched.email ? errors.email : ""
-                      }
-                    />
-                  </div>
-                  <br />
-                  <div className="form-row">
-                    <TextField
-                      id="password"
-                      name="password"
-                      label="Password"
-                      type="password"
-                      variant="outlined"
-                      onChange={handleChange}
-                      error={errors.password && touched.password}
-                      helperText={
-                        errors.password && touched.password
-                          ? errors.password
-                          : ""
-                      }
-                    />
-                  </div>
-                  <div>
-                    <Button variant="contained" disabled={!(dirty && isValid)}>
-                      Sign In
-                    </Button>
-                  </div>
-                </Form>
-                <div>
-                  <span>{data.email}</span>
-                </div>
-              </div>
-            );
-          }}
+          {({ errors, touched, isSubmitting }) => (
+            <Form>
+              <h1>Sign in to continue</h1>
+              {input.map((field, index) => (
+                <Field
+                  key={index}
+                  as={TextField}
+                  type={field.type}
+                  name={field.name}
+                  label={field.label}
+                  variant="outlined"
+                  fullWidth
+                  margin="normal"
+                  error={errors[field.name] && touched[field.name]}
+                  helperText={
+                    errors[field.name] && touched[field.name]
+                      ? errors[field.name]
+                      : ""
+                  }
+                />
+              ))}
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={isSubmitting}
+                onClick={() => setIsSnackbarOpen(true)}
+              >
+                Submit
+              </Button>
+
+              <Snackbar
+                open={isSnackbarOpen && Object.keys(errors).length > 0}
+                autoHideDuration={6000}
+                onClose={() => setIsSnackbarOpen(false)}
+              >
+                <Alert severity="error">
+                  Please fix the following errors:
+                  <ul>
+                    {Object.keys(errors).map((field, index) => (
+                      <li key={index}>{errors[field]}</li>
+                    ))}
+                  </ul>
+                </Alert>
+              </Snackbar>
+            </Form>
+          )}
         </Formik>
       </Box>
     </div>
   );
 };
-
 export default Task14;

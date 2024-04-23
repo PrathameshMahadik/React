@@ -20,9 +20,16 @@ const AGE = "Age";
 const GENDER = "Gender";
 const MALE = "Male";
 const FEMALE = "Female";
+const AGREE_TERMS = "Agree to terms";
+const EMPTY_STRING = "";
 
 export {
-  AGE,GENDER,MALE,FEMALE,
+  EMPTY_STRING,
+  AGREE_TERMS,
+  AGE,
+  GENDER,
+  MALE,
+  FEMALE,
   cap_Name,
   cap_Email,
   Password,
