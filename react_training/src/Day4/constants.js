@@ -2,6 +2,7 @@ const Text = "text";
 const type_here_placeholder = "type here......";
 const Checkbox = "checkbox";
 const Name = "name";
+const cap_Name = "Name";
 const Email = "email";
 const cap_Email = "Email";
 const Number = "number";
@@ -15,8 +16,14 @@ const Submit = "submit";
 const cap_Submit = "Submit";
 const Password = "password";
 const cap_password = "Password";
+const AGE = "Age";
+const GENDER = "Gender";
+const MALE = "Male";
+const FEMALE = "Female";
 
 export {
+  AGE,GENDER,MALE,FEMALE,
+  cap_Name,
   cap_Email,
   Password,
   cap_password,
