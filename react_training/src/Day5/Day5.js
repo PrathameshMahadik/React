@@ -8,6 +8,7 @@ import {
   Task16,
   Task4,
   Task5,
+  Task7,
 } from "./index";
 
 const Day5 = () => {
@@ -16,6 +17,7 @@ const Day5 = () => {
       <Task1 />
       <Task4 />
       <Task5 />
+      <Task7 />
       <Task12 />
       <Task13 />
       <Task14 />

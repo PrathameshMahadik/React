@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {input } from './input'
+import { input } from './input'
 import '../CSS files/task4.css'
 
 const Login = () => {
@@ -9,9 +9,11 @@ const Login = () => {
 
   const handleLogin = () => {
     if (formData.name === "Prathamesh" && formData.password === "123456") {
-      localStorage.setItem("loginState", true);
-      navigate("/home");
+      localStorage.setItem("login", "true");
     }
+    localStorage.getItem("login") === "true"
+      ? navigate("/about")
+      : navigate("/login");
   };
   const handleChange = (key, value) => {
     setFormData((prevState) => ({

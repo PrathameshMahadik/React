@@ -6,6 +6,7 @@ import { withLogger } from "../Components/index";
 const Task15 = ({ increment, count }) => {
   return (
     <>
+      <h1>Task 15</h1>
       <h2>HOC Mounting, Unmounting, Update</h2>
       <div className="withLogger">
         <button onClick={increment}>
