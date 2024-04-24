@@ -4,9 +4,9 @@ import withAuth from "./withAuth";
 
 const Protected = (props) => {
   return (
-    <div>
+    <>
       {props.isAuthenticated === "true" ? <Outlet /> : <Navigate to="/login" />}
-    </div>
+    </>
   );
 };
 export default withAuth(Protected);

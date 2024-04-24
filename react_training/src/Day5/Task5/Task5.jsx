@@ -2,20 +2,20 @@
 using Axios and displays it on the page. */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FAKESTORE } from "../url";
+import { Data } from "../Components/index";
 
 const Task5 = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
-
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products")
+      .get(FAKESTORE)
       .then((resp) => {
         setData(resp.data);
       })
       .catch((error) => setError(error.message));
   }, []);
-
   if (error) {
     return (
       <>
@@ -29,26 +29,7 @@ const Task5 = () => {
   return (
     <>
       <h2>Axios API</h2>
-      <section className="container">
-        {data.map((x, index) => {
-          return (
-            <div className="card" key={`name_${index}`}>
-              <div>
-                <img
-                  src={x.image}
-                  alt="product_picture"
-                  height={150}
-                  width={150}
-                />
-              </div>
-              <div className="info">
-                <h4>{x.title}</h4>
-                <p>PRICE : {x.price}</p>
-              </div>
-            </div>
-          );
-        })}
-      </section>
+      <Data data={data} />
     </>
   );
 };

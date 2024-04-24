@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { JSONPLACEHOLDER } from "../url";
 
 const Task4 = () => {
   const [array, setArray] = useState([]);
@@ -6,7 +7,7 @@ const Task4 = () => {
   const itemPerPage = 10;
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts").then((response) => {
+    fetch(JSONPLACEHOLDER).then((response) => {
       response
         .json()
         .then((result) => {
@@ -22,14 +23,13 @@ const Task4 = () => {
   const miniData = array.slice(startIndex, endIndex);
 
   return (
-    <div>
+    <>
       <h2>Pagination</h2>
       <ul>
         {miniData.map((item) => (
           <li key={item.id}>{item.body}</li>
         ))}
       </ul>
-
       <div className="pageButton">
         <button
           onClick={() => setCurrentPage(currentPage - 1)}
@@ -37,7 +37,6 @@ const Task4 = () => {
         >
           Previous
         </button>
-
         <button
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={endIndex >= array.length}
@@ -45,7 +44,7 @@ const Task4 = () => {
           Next
         </button>
       </div>
-    </div>
+    </>
   );
 };
 export default Task4;

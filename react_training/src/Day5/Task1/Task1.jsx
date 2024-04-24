@@ -2,7 +2,9 @@
 and displays it on the page. Use the fetch function to make the request. */
 import React, { useEffect, useState } from "react";
 import "../CSS_Files/index.css";
+import { FAKESTORE } from "../url";
 import CircularProgress from "@mui/material/CircularProgress/CircularProgress";
+import { Data } from "../Components/index";
 
 const Task1 = () => {
   const [data, setData] = useState([]);
@@ -10,7 +12,7 @@ const Task1 = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://fakestoreapi.com/products")
+      fetch(FAKESTORE)
         .then((data) => {
           if (!data.ok) {
             throw Error("Could not fetch the data for that resource");
@@ -27,7 +29,6 @@ const Task1 = () => {
         });
     }, 3000);
   });
-
   if (loading) {
     return (
       <div className="spinner">
@@ -35,7 +36,6 @@ const Task1 = () => {
       </div>
     );
   }
-
   if (error) {
     return (
       <>
@@ -47,30 +47,7 @@ const Task1 = () => {
     );
   }
 
-  return (
-    <div>
-      <section className="container">
-        {data.map((x, index) => {
-          return (
-            <div className="card" key={`name_${index}`}>
-              <div>
-                <img
-                  src={x.image}
-                  alt="product_picture"
-                  height={150}
-                  width={150}
-                />
-              </div>
-              <div className="info">
-                <h4>{x.title}</h4>
-                <p>PRICE : {x.price}</p>
-              </div>
-            </div>
-          );
-        })}
-      </section>
-    </div>
-  );
+  return <Data data={data} />;
 };
 
 export default Task1;

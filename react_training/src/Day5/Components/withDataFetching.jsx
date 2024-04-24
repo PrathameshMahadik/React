@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FAKESTORE } from "../url";
 
 const withDataFetching = (WrappedComponent) => {
   function NewComponent() {
@@ -8,7 +9,7 @@ const withDataFetching = (WrappedComponent) => {
 
     useEffect(() => {
       axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+        .get(FAKESTORE)
         .then((resp) => {
           setData(resp.data);
         })
