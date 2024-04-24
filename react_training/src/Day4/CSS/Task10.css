@@ -1,0 +1,10 @@
+.signInBox{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.button1{
+    width: 200px;
+}
