@@ -21,24 +21,27 @@ const AxiosPost = () => {
   };
 
   return (
-    <>
+    <div className="Task7">
       <h2>Axios Post</h2>
-        <label>UserId</label>
+        <label>UserId : 
         <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
-        <label>Title</label>
+        </label>
+        <label>Title :
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Body</label>
+        </label>
+        <label>Body :
         <input
           type="text"
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
+        </label>
         <button onClick={handleSubmit}>Post</button>
-    </>
+    </div>
   );
 };
 

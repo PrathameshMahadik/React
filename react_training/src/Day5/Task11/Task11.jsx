@@ -2,20 +2,11 @@
 Create a React component that displays error messages when GraphQL requests 
 fail and provides a way for users to retry the request. */
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
-
-const MyQuery = gql`
-  query {
-    countries {
-      name
-      phone
-      currenc
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { GET_COUNTRY } from "../GraphQl/Query";
 
 const Task11 = () => {
-  const { error, data, loading } = useQuery(MyQuery);
+  const { error, data, loading } = useQuery(GET_COUNTRY);
 
   if (loading) return "Loading...";
   if (error)

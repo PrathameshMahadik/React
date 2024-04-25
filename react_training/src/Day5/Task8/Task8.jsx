@@ -1,20 +1,11 @@
 /* 8.set up a GraphQL client library like Apollo Client. 
 Create a simple component that uses the client to fetch and display data from a GraphQL API. */
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
-
-const MyQuery = gql`
-  query {
-    countries {
-      name
-      phone
-      currency
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { GET_COUNTRY } from "../GraphQl/Query";
 
 const Task8 = () => {
-  const { error, data, loading } = useQuery(MyQuery);
+  const { error, data, loading } = useQuery(GET_COUNTRY);
 
   if (loading) return "Loading...";
   if (error) return <h2 className="error">{error.message}</h2>;

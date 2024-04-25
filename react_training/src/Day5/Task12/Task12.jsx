@@ -10,12 +10,16 @@ const Task12 = () => {
       <h2>Resuable Button Component</h2>
       <div className="reuseButton">
         {buttons.map((button, index) => (
-          <ReuseButton
-            key={index}
-            label={button.label}
-            style={button.style}
-            onClick={button.onClick}
-          />
+          <>
+            <ReuseButton
+              key={index}
+              label={button.label}
+              style={button.style}
+              onClick={button.onClick}
+            />
+            <br />
+            <br />
+          </>
         ))}
       </div>
     </>

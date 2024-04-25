@@ -3,34 +3,9 @@
 for large datasets and display the data in a user-friendly way. */
 // Extend the previous assignment to allow users to perform mutations, such as adding, updating, or deleting items. Implement a form and mutation queries to interact with the GraphQL API.
 import React, { useState } from "react";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { inputFields } from "../MockData/Task9";
-
-const MyQuery = gql`
-  query {
-    countries {
-      name
-      phone
-      currency
-    }
-  }
-`;
-const ADD_COUNTRY = gql`
-  mutation AddCountry($name: String!, $phone: String!, $currency: String!) {
-    addCountry(name: $name, phone: $phone, currency: $currency) {
-      name
-      phone
-      currency
-    }
-  }
-`;
-const DELETE_COUNTRY = gql`
-  mutation DeleteCountry($name: String!) {
-    deleteCountry(name: $name) {
-      name
-    }
-  }
-`;
+import { GET_COUNTRY, ADD_COUNTRY, DELETE_COUNTRY } from '../GraphQl/Query'
 
 const Task9 = () => {
   const [formData, setFormData] = useState({
@@ -39,7 +14,7 @@ const Task9 = () => {
     currency: "",
   });
 
-  const { error, data, loading } = useQuery(MyQuery);
+  const { error, data, loading } = useQuery(GET_COUNTRY);
   const [addCountry] = useMutation(ADD_COUNTRY);
   const [deleteCountry] = useMutation(DELETE_COUNTRY);
 
@@ -56,7 +31,7 @@ const Task9 = () => {
     try {
       const { data } = await addCountry({
         variables: { name, phone, currency },
-        refetchQueries: [{ query: MyQuery }],
+        refetchQueries: [{ query: GET_COUNTRY }],
       });
       console.log("Added country:", data.addCountry);
       setFormData({
@@ -72,7 +47,7 @@ const Task9 = () => {
     try {
       const { data } = await deleteCountry({
         variables: { name },
-        refetchQueries: [{ query: MyQuery }],
+        refetchQueries: [{ query: GET_COUNTRY }],
       });
       console.log("Deleted country:", data.deleteCountry);
     } catch (err) {

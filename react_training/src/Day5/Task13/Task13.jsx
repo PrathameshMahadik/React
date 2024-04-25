@@ -1,6 +1,6 @@
 // Design and implement a Modal component in React. Allow customization of the modal content and provide options to open, close, and toggle the modal. Use this component to display various types of content.
-import * as React from "react";
-import { Box, Button, Typography, Modal } from '../CSS_Files/mui'
+import React, { useState } from "react";
+import { Box, Button, Typography, Modal } from "../CSS_Files/mui";
 
 const style = {
   position: "absolute",
@@ -15,7 +15,7 @@ const style = {
 };
 
 const Task13 = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -23,7 +23,10 @@ const Task13 = () => {
     <>
       <h2>Modal Component</h2>
       <div className="modalComponent">
-        <Button style={{ border: "1px solid #000" }} onClick={handleOpen}>
+        <Button
+          style={{ border: "1px solid #000", width: "200px" }}
+          onClick={handleOpen}
+        >
           Open modal
         </Button>
         <Modal
@@ -39,8 +42,10 @@ const Task13 = () => {
             <Typography id="modal-modal-body" variant="h6" component="h5">
               Just Click anywhere then the modal component will close
             </Typography>
-
-            <Button style={{ border: "1px solid #000" }} onClick={handleClose}>
+            <Button
+              style={{ border: "1px solid #000", width: "200px" }}
+              onClick={handleClose}
+            >
               Close modal
             </Button>
           </Box>
@@ -48,5 +53,5 @@ const Task13 = () => {
       </div>
     </>
   );
-}
+};
 export default Task13;
