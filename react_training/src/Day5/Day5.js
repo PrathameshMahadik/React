@@ -9,6 +9,7 @@ import {
   Task4,
   Task5,
   Task7,
+  Apollo,
 } from "./index";
 
 const Day5 = () => {
@@ -23,6 +24,7 @@ const Day5 = () => {
       <Task14 />
       <Task15 />
       <Task16 />
+      <Apollo />
     </div>
   );
 };

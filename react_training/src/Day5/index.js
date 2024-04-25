@@ -10,8 +10,10 @@ import Task13 from "./Task13/Task13";
 import Task14 from "./Task14/Task14";
 import Task15 from "./Task15/Task15";
 import Task16 from "./Task16/Task16";
+import Apollo from "./Task9/Apollo";
 
 export {
+  Apollo,
   Task1,
   Task11,
   Task12,
