@@ -10,7 +10,7 @@ const Task12 = () => {
       <h2>Resuable Button Component</h2>
       <div className="reuseButton">
         {buttons.map((button, index) => (
-          <>
+          <section key={`name_${index}`}>
             <ReuseButton
               key={index}
               label={button.label}
@@ -19,7 +19,7 @@ const Task12 = () => {
             />
             <br />
             <br />
-          </>
+          </section>
         ))}
       </div>
     </>
