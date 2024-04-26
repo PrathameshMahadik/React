@@ -4,8 +4,10 @@ for large datasets and display the data in a user-friendly way. */
 // Extend the previous assignment to allow users to perform mutations, such as adding, updating, or deleting items. Implement a form and mutation queries to interact with the GraphQL API.
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
+// import { Snackbar, Alert } from "@mui/material";
+
 import { inputFields } from "../MockData/Task9";
-import { GET_COUNTRY, ADD_COUNTRY, DELETE_COUNTRY } from '../GraphQl/Query'
+import { GET_COUNTRY, ADD_COUNTRY, DELETE_COUNTRY } from "../GraphQl/Query";
 
 const Task9 = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +42,7 @@ const Task9 = () => {
         currency: "",
       });
     } catch (err) {
-      console.error("Error adding country:", err);
+      alert("Error in Adding country...")
     }
   };
   const handleDelete = async (name) => {
@@ -51,8 +53,7 @@ const Task9 = () => {
       });
       console.log("Deleted country:", data.deleteCountry);
     } catch (err) {
-      console.error("Error deleting country:", err);
-    }
+      alert("Error in Deleting country...")}
   };
   if (loading) return "Loading...";
   if (error) return <h2 className="error">{error.message}</h2>;
@@ -81,7 +82,9 @@ const Task9 = () => {
             required
           />
         ))}
-        <button type="submit">Add Country</button>
+        <button type="Submit">
+          Add Country
+        </button>
       </form>
     </>
   );
