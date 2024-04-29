@@ -1,14 +1,14 @@
-import { Task3, Task4, Task5, Task6 } from "./index";
+import { Task1, Task3, Task4, Task5, Task6 } from "./index";
 import "./CSS/Day6.css";
 import Task2 from "./Task2/Task2";
 
 function Assignment6() {
   return (
     <>
-      {/* <div className="Task-1">
+      <div className="Task-1">
         <h2>Task1 1</h2>
         <Task1 />
-      </div> */}
+      </div>
       <hr />
       <div className="Task-3">
         <h2>Task 3</h2>
