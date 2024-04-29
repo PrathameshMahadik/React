@@ -6,7 +6,7 @@ import Model from "../../Day5/Components/Model";
 const Task6 = () => {
   return (
     <>
-      <Model a="Welcome to successive" b="I am a trainee Engineer" />
+      <Model title1="Welcome to successive" title2="I am a trainee Engineer" />
     </>
   );
 };

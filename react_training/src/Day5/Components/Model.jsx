@@ -18,7 +18,7 @@ const Model = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const { a, b } = props;
+  const { title1, title2 } = props;
 
   return (
     <>
@@ -38,10 +38,10 @@ const Model = (props) => {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              <strong>{a}</strong>
+              <strong>{title1}</strong>
             </Typography>
             <Typography id="modal-modal-body" variant="h6" component="h5">
-              {b}
+              {title2}
             </Typography>
             <Button
               style={{ border: "1px solid #000", width: "200px" }}
