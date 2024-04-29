@@ -1,7 +1,7 @@
 import React from "react";
 import withAuth from "./withAuth";
 
-const About = (props) => {
+const About = () => {
   return <h2>Welcome to the About Page</h2>;
 };
 
