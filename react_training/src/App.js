@@ -9,7 +9,6 @@ function App() {
       {/* <Day4 /> */}
       {/* <Day5 /> */}
       <Day6 />
-
     </div>
   );
 }
