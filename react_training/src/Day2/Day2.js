@@ -23,24 +23,43 @@ const Day2 = () => {
   return (
     <div className="App">
       <Counter />
+      <hr />
       <PersonForm />
+      <hr />
       <ToDoList />
+      <hr />
       <RandomNumberGenerator />
+      <hr />
       <CounterWithStep />
+      <hr />
       <Clock />
+      <hr />
       <Notification />
+      <hr />
       <SlideShow />
+      <hr />
       <ThemeSwitcher />
+      <hr />
       <LanguageSwitcher />
+      <hr />
       <Shopping />
+      <hr />
       <VotingApp />
+      <hr />
       <Parent />
+      <hr />
       <TaskList tasks={tasks} />
+      <hr />
       <StudentList />
+      <hr />
       <EmployeeSalary />
+      <hr />
       <CopyButton />
+      <hr />
       <Storage />
+      <hr />
       <CountDownTimer />
+      <hr />
     </div>
   );
 };

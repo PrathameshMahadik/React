@@ -10,9 +10,5 @@ test("modal opens and closes correctly", async () => {
   await screen.findByText("Welcome to successive");
   expect(screen.getByText("Welcome to successive")).toBeInTheDocument();
   fireEvent.click(screen.getByText("Close modal"));
-  await screen.findByText("Welcome to successive", {
-    timeout: 1000,
-    hidden: true,
-  });
   expect(screen.queryByText("Welcome to successive")).toBeNull();
 });

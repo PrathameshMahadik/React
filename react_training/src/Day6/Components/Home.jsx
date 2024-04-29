@@ -1,9 +1,10 @@
 import React from "react";
 
-const Home = () => {
+const Home = (props) => {
+  const { comment } = props;
   return (
     <div>
-      <h2>This is the Home page</h2>
+      <h2>{comment}</h2>
     </div>
   );
 };

@@ -39,7 +39,7 @@ const Task6 = () => {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              <strong>Welcome to succesive</strong>
+              <strong>Welcome to successive</strong>
             </Typography>
             <Typography id="modal-modal-body" variant="h6" component="h5">
               I am a trainee Engineer

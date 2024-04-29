@@ -6,7 +6,6 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const Home = lazy(() => import("../Components/Home"));
-const About = lazy(() => import("../Components/About"));
 
 const Task1 = () => {
   return (
@@ -19,8 +18,11 @@ const Task1 = () => {
         }
       >
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home comment="This is Home Page...." />} />
+          <Route
+            path="/about"
+            element={<Home comment="This is About Page...." />}
+          />
         </Routes>
       </Suspense>
     </Router>

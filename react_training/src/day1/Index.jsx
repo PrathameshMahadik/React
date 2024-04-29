@@ -11,13 +11,19 @@ function Index() {
   return (
     <div className="App">
       <Greeting />
+      <hr />
       <br/>
       <UserCard userData={userData} />
+      <hr />
       <br />
       <Weather temp={29} />
+      <hr />
       <Counter />
+      <hr />
       <TaskList task={task} />
+      <hr />
       <Button buttonData={buttonData} />
+      <hr />
     </div>
   );
 }

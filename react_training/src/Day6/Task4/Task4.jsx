@@ -2,41 +2,45 @@
 input fields for username and password, as well as a submit button. 
 Create test cases to verify that the form fields can be filled, and the submit button works correctly. */
 import React, { useState } from "react";
+import { input } from "../../Day3/Components/input";
+import '../../Day3/CSS files/task4.css'
 
 const Task4 = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ name: "", password: "" });
 
+  const handleChange = (key, value) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
+  };
   const handleSubmit = () => {
     const i = 9;
-
-    console.log("Form Submitted", username, password);
+    console.log("Form Submitted", formData.name, formData.password);
     if (i === 9) {
-      throw new Error("Crashed");
+      console.error("Crashed");
     }
   };
 
   return (
     <>
-      <div className="login">
-        <label>Username:</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+      <div className="mainDiv">
+        {input.map((item, index) => {
+          const { label, type, placeholder, fieldName } = item;
+          return (
+            <section key={`name_${index}`}>
+              <label>{label} : </label>
+              <input
+                required
+                type={type}
+                value={formData.value}
+                placeholder={placeholder}
+                onChange={(e) => handleChange(fieldName, e.target.value)}
+              />
+              <br />
+            </section>
+          );
+        })}
       </div>
 
       <div className="submitButton">
